@@ -1,8 +1,9 @@
+let userName = prompt("What is your name?");
 //get user choice
 const getUserChoice = (userInput) => {
     userInput = userInput.toLowerCase();
     
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors' || userInput === 'bomb') {
+    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
       return userInput;
     } else {
       console.log('Error: Invalid choice!');
@@ -23,9 +24,6 @@ const getComputerChoice = () => {
   };
 //see who wins -> check player vs game
 const determineWinner = (userChoice, computerChoice) => {
-    if (userChoice === 'bomb') {
-      return 'You won with a secret cheat code!';
-    }
     
     if (userChoice === computerChoice) {
       return 'The game is a tie!';
