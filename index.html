@@ -1,30 +1,21 @@
-<!--ADD THE COLOR SCHEME, FONT, ADD ANIMATION HOVER, ADD BORDER ON IMAGES, MAKE SCOREBOARD SMALLER AND CHANGE BACKGROUND ON IT -->
-
-
 <!doctype html>
 <html lang="en">
     <head>
         <title>Rock Paper Scissors</title>
-        <!-- Required meta tags -->
         <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
         <!-- Bootstrap CSS v5.2.1 -->
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="https://use.typekit.net/smr8qal.css">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+        
+        <!-- External CSS -->
+        <link rel="stylesheet" href="style.css" />
+        
+        <!-- Animation Library -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     </head>
 
-    <body>
+    <body class="home">
         <header>
             <div class="container">
                 <div class="row text-center py-3">
@@ -39,36 +30,41 @@
                 <!-- User and Computer Choices -->
                 <div class="row justify-content-center mb-4">
                     <div class="col-md-3 d-flex flex-column align-items-center">
-                        <p>Username</p> 
-                        <img src="/imgs/paper.png" alt="User choice"  style="max-width: 400px; border: black;">
+                        <p>Username</p>
+                        <img src="/imgs/paper.png" alt="User choice" class="choice-img">
                     </div>
                     <div class="col-md-3 d-flex flex-column align-items-center">
                         <button class="btn btn-primary mt-5">Play</button>
                     </div>
                     <div class="col-md-3 d-flex flex-column align-items-center">
                         <p>Computer</p>
-                        <img src="/imgs/paper.png" alt="Computer choice" style="max-width: 400px;">
+                        <img src="/imgs/paper.png" alt="Computer choice" class="choice-img">
                     </div>
                 </div>
 
-                <!-- Rock Paper Scissors Images -->
+                <!-- Rock Paper Scissors Buttons -->
                 <div class="row justify-content-center text-center pt-5 m-5">
-                    <div class="col-md-3 d-flex justify-content-center" style="padding: 0 10px;">
-                        <img src="/imgs/rock.png" alt="Rock" class="img-fluid animate__animated animate__pulse" style="max-width: 150px;">
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <button class="game-btn" data-choice="rock">
+                            <img src="/imgs/rock.png" alt="Rock" class="btn-img">
+                        </button>
                     </div>
-                    <div class="col-md-3 d-flex justify-content-center" style="padding: 0 10px;">
-                        <img src="/imgs/paper.png" alt="Paper" class="img-fluid" style="max-width: 150px;">
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <button class="game-btn" data-choice="paper">
+                            <img src="/imgs/paper.png" alt="Paper" class="btn-img">
+                        </button>
                     </div>
-                    <div class="col-md-3 d-flex justify-content-center" style="padding: 0 10px;">
-                        <img src="/imgs/scissors.png" alt="Scissors" class="img-fluid" style="max-width: 150px;">
+                    <div class="col-md-3 d-flex justify-content-center">
+                        <button class="game-btn" data-choice="scissors">
+                            <img src="/imgs/scissors.png" alt="Scissors" class="btn-img">
+                        </button>
                     </div>
                 </div>
 
                 <!-- Game Result -->
                 <div class="score">
-                    <!-- Scoreboard container with a card-like structure -->
-                    <div class="card p-4 m-4 shadow-lg">
-                        <div class="row text-center mb-3">
+                    <div class="card p-3 shadow-sm">
+                        <div class="text-center mb-3">
                             <h2 class="card-title">SCORE</h2>
                         </div>
                         <div class="row mb-3 m-3">
@@ -81,7 +77,7 @@
                                 <p class="fs-4">32131</p>
                             </div>
                         </div>
-                        <div class="row text-center">
+                        <div class="text-center">
                             <button class="btn btn-primary">Play Again</button>
                         </div>
                     </div>
@@ -89,21 +85,10 @@
             </div>
         </main>
 
-        <footer>
-            <div class=""></div>
-        </footer>
+        <footer></footer>
 
         <!-- Bootstrap JavaScript Libraries -->
-        <script
-            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-            crossorigin="anonymous"
-        ></script>
-
-        <script
-            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-            crossorigin="anonymous"
-        ></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
     </body>
 </html>
