@@ -1,31 +1,40 @@
+//get username 
 let userName = prompt("What is your name?");
+document.getElementById("userName").textContent = userName;
 
-  // Display the final part of the story in the webpage element with the ID "storythree"
-  document.getElementById("userName").textContent = userName;
 
 //get user choice
-const getUserChoice = (userInput) => {
-    userInput = userInput.toLowerCase();
-    
-    if (userInput === 'img' || userInput === 'paper' || userInput === 'scissors') {
-      return userInput;
-    } else {
-      console.log('Error: Invalid choice!');
+
+let userChoice = '';
+
+const updateUserChoice = (choice) => {
+    let imgSrc = '';
+    if (choice === 'rock') {
+      imgSrc = '/imgs/rock.png';
+    } else if (choice === 'paper') {
+      imgSrc = '/imgs/paper.png';
+    } else if (choice === 'scissors') {
+      imgSrc = '/imgs/scissors.png';
     }
+    userChoiceImg.src = imgSrc;
   };
+
 //get computer choice
+
 const getComputerChoice = () => {
-    const randomNumber = Math.floor(Math.random() * 3);
-    
-    switch (randomNumber) {
-      case 0:
-        return 'rock';
-      case 1:
-        return 'paper';
-      case 2:
-        return 'scissors';
-    }
-  };
+  const randomNumber = Math.floor(Math.random() * 3);
+  
+  switch (randomNumber) {
+    case 0:
+      return 'rock';
+    case 1:
+      return 'paper';
+    case 2:
+      return 'scissors';
+  }
+};
+
+
 //see who wins -> check player vs game
 const determineWinner = (userChoice, computerChoice) => {
     
@@ -45,18 +54,6 @@ const determineWinner = (userChoice, computerChoice) => {
       return computerChoice === 'rock' ? 'The computer won!' : 'You won!';
     }
   };
-//show who wins -> users-> display score
-const playGame = () => {
-    const userChoice = getUserChoice('rock'); 
-    const computerChoice = getComputerChoice();
-    
-    console.log('You threw: ' + userChoice);
-    console.log('The computer threw: ' + computerChoice);
-    
-    console.log(determineWinner(userChoice, computerChoice));
-  };
-  
-  
-  playGame();
 
 
+playGame();
