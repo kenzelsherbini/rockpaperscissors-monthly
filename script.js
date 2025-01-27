@@ -4,9 +4,7 @@ document.getElementById("userName").textContent = userName;
 
 
 //get user choice
-
 let userChoice = '';
-
 const updateUserChoice = (choice) => {
     let imgSrc = '';
     if (choice === 'rock') {
@@ -20,6 +18,17 @@ const updateUserChoice = (choice) => {
   };
 
 //get computer choice
+const updateComputerChoice = (choice) => {
+  let imgSrc = '';
+  if (choice === 'rock') {
+    imgSrc = '/imgs/rock.png';
+  } else if (choice === 'paper') {
+    imgSrc = '/imgs/paper.png';
+  } else if (choice === 'scissors') {
+    imgSrc = '/imgs/scissors.png';
+  }
+  computerChoiceImg.src = imgSrc;
+};
 
 const getComputerChoice = () => {
   const randomNumber = Math.floor(Math.random() * 3);
