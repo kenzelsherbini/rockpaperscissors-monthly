@@ -1,9 +1,13 @@
 let userName = prompt("What is your name?");
+
+  // Display the final part of the story in the webpage element with the ID "storythree"
+  document.getElementById("userName").textContent = userName;
+
 //get user choice
 const getUserChoice = (userInput) => {
     userInput = userInput.toLowerCase();
     
-    if (userInput === 'rock' || userInput === 'paper' || userInput === 'scissors') {
+    if (userInput === 'img' || userInput === 'paper' || userInput === 'scissors') {
       return userInput;
     } else {
       console.log('Error: Invalid choice!');
@@ -54,4 +58,5 @@ const playGame = () => {
   
   
   playGame();
+
 
