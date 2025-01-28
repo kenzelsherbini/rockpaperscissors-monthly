@@ -21,7 +21,10 @@ p {
 
 header {
     font-size: 30px;
+    border: 1px solid #db93bb;
+    border-radius: 12px;
 }
+
 
 
 .choice-img {
