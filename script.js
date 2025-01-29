@@ -1,69 +1,80 @@
-//get username 
+// Get username
 let userName = prompt("What is your name?");
 document.getElementById("userName").textContent = userName;
-let userChoiceImg = document.getElementById('userChoiceImg')
-let computerChoiceImg = document.getElementById('computerChoiceImg')
 
-let computerChoice
-let userChoice
+let userChoiceImg = document.getElementById("userChoiceImg");
+let computerChoiceImg = document.getElementById("computerChoiceImg");
 
+let computerChoice;
+let userChoice;
+let userScore = 0;
+let computerScore = 0;
 
-//get computer choice
-let  getComputerChoice = () => {
-  let randomNumber = Math.floor(Math.random() * 3);
-console.log(randomNumber)
-  switch (randomNumber) {
-    case 0:
-      computerChoiceImg.src= '/imgs/rock.png';
-      computerChoice='rock';
-      break
-    case 1:
-    computerChoiceImg.src = '/imgs/paper.png';
-     computerChoice='paper';
-     break
-    case 2:
-      computerChoiceImg.src = '/imgs/scissors.png';
-      computerChoice='scissors';
-      break
-  }
+// update scoreboard 
+function updateScoreboard() {
+    document.getElementById("userScore").textContent = userScore;
+    document.getElementById("computerScore").textContent = computerScore;
+}
+
+// Get computer choice
+let getComputerChoice = () => {
+    let randomNumber = Math.floor(Math.random() * 3);
+    switch (randomNumber) {
+        case 0:
+            computerChoiceImg.src = "/imgs/rock.png";
+            computerChoice = "rock";
+            break;
+        case 1:
+            computerChoiceImg.src = "/imgs/paper.png";
+            computerChoice = "paper";
+            break;
+        case 2:
+            computerChoiceImg.src = "/imgs/scissors.png";
+            computerChoice = "scissors";
+            break;
+    }
 };
 
-//get user choice
+// Get user choice
 const updateUserChoice = (choice) => {
-  if (choice === 'rock') {
-    userChoiceImg.src  = '/imgs/rock.png';
-  } else if (choice === 'paper') {
-    userChoiceImg.src  = '/imgs/paper.png';
-  } else if (choice === 'scissors') {
-    userChoiceImg.src  = '/imgs/scissors.png';
-  }
-
+    userChoice = choice;
+    userChoiceImg.src = `/imgs/${choice}.png`;
 };
 
-
-//see who wins -> check player vs game
+// Determine winner
 const determineWinner = (userChoice, computerChoice) => {
+    if (userChoice === computerChoice) {
+        return "It's a tie!";
+    }
 
-  if (userChoice === computerChoice) {
-    return 'The game is a tie!';
-  }
-
-  if (userChoice === 'rock') {
-    return computerChoice === 'paper' ? 'The computer won!' : 'You won!';
-  }
-
-  if (userChoice === 'paper') {
-    return computerChoice === 'scissors' ? 'The computer won!' : 'You won!';
-  }
-
-  if (userChoice === 'scissors') {
-    return computerChoice === 'rock' ? 'The computer won!' : 'You won!';
-  }
+    if (
+        (userChoice === "rock" && computerChoice === "scissors") ||
+        (userChoice === "paper" && computerChoice === "rock") ||
+        (userChoice === "scissors" && computerChoice === "paper")
+    ) {
+        userScore++;
+        return `${userName} wins this round!`;
+    } else {
+        computerScore++;
+        return "Computer wins this round!";
+    }
 };
 
 
-function playGame(userChoice){
- updateUserChoice(userChoice)
- getComputerChoice()
- determineWinner(userChoice, computerChoice)
+// Play game
+function playGame(userChoice) {
+    updateUserChoice(userChoice);
+    getComputerChoice();
+    let result = determineWinner(userChoice, computerChoice);
+    
+    updateScoreboard();
+
+    // Check if someone has won 5 rounds
+    if (userScore === 5) {
+        alert(`${userName} wins the game! 🎉`);
+        resetGame();
+    } else if (computerScore === 5) {
+        alert("Computer wins the game! 😢");
+        resetGame();
+    }
 }
