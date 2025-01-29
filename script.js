@@ -29,9 +29,7 @@ console.log(randomNumber)
 };
 
 //get user choice
-
 const updateUserChoice = (choice) => {
-  
   if (choice === 'rock') {
     userChoiceImg.src  = '/imgs/rock.png';
   } else if (choice === 'paper') {
@@ -39,6 +37,7 @@ const updateUserChoice = (choice) => {
   } else if (choice === 'scissors') {
     userChoiceImg.src  = '/imgs/scissors.png';
   }
+
 };
 
 
@@ -67,5 +66,4 @@ function playGame(userChoice){
  updateUserChoice(userChoice)
  getComputerChoice()
  determineWinner(userChoice, computerChoice)
-
 }
