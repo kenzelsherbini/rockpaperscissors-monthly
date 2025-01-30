@@ -90,7 +90,7 @@ function resetGame() {
     document.getElementById("userChoiceImg").src = "/imgs/paper.png";
     document.getElementById("computerChoiceImg").src = "/imgs/paper.png";
 
- 
+
 }
 
 
