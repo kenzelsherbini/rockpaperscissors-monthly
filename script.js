@@ -80,12 +80,4 @@ function playGame(userChoice) {
 }
 
 
-// Reset game
-function resetGame() {
-  userScore = 0;
-  computerScore = 0;
-  updateScoreboard();
-}
-
-//make the idle image and make scoreboard bigger 
 

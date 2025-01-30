@@ -12,6 +12,13 @@ body {
     color: #f0a6cf;
 }
 
+h5 {
+    color: #f0a6cf;
+    font-family: "century-gothic", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
 p {
     font-family: "filson-pro", sans-serif;
     font-weight: 400;
@@ -19,12 +26,11 @@ p {
     color: #fc82c5;
 }
 
-header {
+.header {
     font-size: 30px;
     border: 1px solid #db93bb;
     border-radius: 12px;
 }
-
 
 
 .choice-img {
@@ -75,3 +81,4 @@ header {
 .btn-primary:hover {
     background: #db93bb;
 }
+
