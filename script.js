@@ -80,4 +80,17 @@ function playGame(userChoice) {
 }
 
 
+//reset button 
+function resetGame() {
+    userScore = 0;
+    computerScore = 0;
+    
+    updateScoreboard();
+
+    document.getElementById("userChoiceImg").src = "/imgs/paper.png";
+    document.getElementById("computerChoiceImg").src = "/imgs/paper.png";
+
+ 
+}
+
 
