@@ -21,15 +21,15 @@ let getComputerChoice = () => {
     let randomNumber = Math.floor(Math.random() * 3);
     switch (randomNumber) {
         case 0:
-            computerChoiceImg.src = "/imgs/rock.png";
+            computerChoiceImg.src = "imgs/rock.png";
             computerChoice = "rock";
             break;
         case 1:
-            computerChoiceImg.src = "/imgs/paper.png";
+            computerChoiceImg.src = "imgs/paper.png";
             computerChoice = "paper";
             break;
         case 2:
-            computerChoiceImg.src = "/imgs/scissors.png";
+            computerChoiceImg.src = "imgs/scissors.png";
             computerChoice = "scissors";
             break;
     }
@@ -38,7 +38,7 @@ let getComputerChoice = () => {
 // Get user choice
 const updateUserChoice = (choice) => {
     userChoice = choice;
-    userChoiceImg.src = `/imgs/${choice}.png`;
+    userChoiceImg.src = `imgs/${choice}.png`;
 };
 
 // Determine winner
