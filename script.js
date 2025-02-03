@@ -53,10 +53,10 @@ const determineWinner = (userChoice, computerChoice) => {
         (userChoice === "scissors" && computerChoice === "paper")
     ) {
         userScore++;
-        return `${userName} wins this round!`;
+        return `${userName} wins`;
     } else {
         computerScore++;
-        return "Computer wins this round!";
+        return "Computer wins";
     }
 };
 
@@ -71,10 +71,10 @@ function playGame(userChoice) {
 
     // Check if someone has won 5 rounds
     if (userScore === 5) {
-        alert(`${userName} wins the game! 🎉`);
+        alert(`${userName} wins the game`);
         resetGame();
     } else if (computerScore === 5) {
-        alert("Computer wins the game! 😢");
+        alert("Computer wins the game");
         resetGame();
     }
 }
